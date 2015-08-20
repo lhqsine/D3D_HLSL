@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CBoard.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Common\dxstdafx.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
@@ -48,13 +45,13 @@
     <ClCompile Include="..\..\Common\DXUTsound.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="CRenderObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CBoard.h">
-      <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Common\dxstdafx.h">
       <Filter>头文件</Filter>
@@ -82,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Common\DXUTsound.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderObject.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
