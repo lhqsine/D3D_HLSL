@@ -2,6 +2,7 @@
 
 #include "dxstdafx.h"
 #include "resource.h"
+
 #include "CRenderObject.h"
 //--------------------------------------------------------------------------------------
 // Global variables
@@ -14,8 +15,9 @@ D3DXMATRIXA16 g_matWorld;
 D3DXMATRIXA16 g_matView;
 D3DXMATRIXA16 g_matProject;
 
-CRENDEROBJECT           g_RenderObject_Ordinate;         // 显示的物体
-CRENDEROBJECT           g_RenderObject_Wave;             // 波浪物体
+CRENDEROBJECT          	g_RenderObjectOccluder; 
+CRENDEROBJECT           g_RenderGround;         
+CRENDEROBJECT           g_RenderLight;         
 //--------------------------------------------------------------------------------------
 // 与用户交互的控制 ID
 //--------------------------------------------------------------------------------------
@@ -58,7 +60,7 @@ INT WINAPI WinMain( HINSTANCE, HINSTANCE, LPSTR, int )
     DXUTSetCursorSettings( true, true );
     InitApp();
     DXUTInit( true, true, true ); 
-    DXUTCreateWindow( L"EmptyProject_DXUT_7" );
+    DXUTCreateWindow( L"PlaneShadow_1" );
     DXUTCreateDevice( D3DADAPTER_DEFAULT, true, 640, 410, IsDeviceAcceptable, ModifyDeviceSettings );
     DXUTMainLoop();
     return DXUTGetExitCode();
@@ -123,19 +125,39 @@ HRESULT CALLBACK OnCreateDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFACE_
     TCHAR szAppPath[ MAX_PATH ];
     TCHAR szRcPath[ MAX_PATH ];
     GetCurrentDirectory( MAX_PATH, szAppPath );
-    // 
+
+	// 
     lstrcpy( szRcPath , szAppPath );
-    lstrcat( szRcPath ,L"\\ResFile_1_Ordinate" );
+    lstrcat( szRcPath ,L"\\ResFile_1_Object" );
     SetCurrentDirectory( szRcPath );
     TCHAR* szFile_1 = L"ShmFile.shm";
-    if( FAILED( hr = g_RenderObject_Ordinate.OnCreateDevice( pd3dDevice ,szFile_1 ))) return hr;
+    if( FAILED( hr = g_RenderObjectOccluder.OnCreateDevice( pd3dDevice ,szFile_1 ))) return hr;
     //
-    lstrcpy( szRcPath ,szAppPath );
-    lstrcat( szRcPath ,L"\\ResFile_2_Wave" );
+	lstrcpy( szRcPath , szAppPath );
+    lstrcat( szRcPath ,L"\\ResFile_2_Light" );
     SetCurrentDirectory( szRcPath );
     TCHAR* szFile_2 = L"ShmFile.shm";
-    if( FAILED( hr = g_RenderObject_Wave.OnCreateDevice( pd3dDevice ,szFile_2 ))) return hr;
-    //     
+    if( FAILED( hr = g_RenderLight.OnCreateDevice( pd3dDevice ,szFile_2 ))) return hr;
+    //
+	lstrcpy( szRcPath , szAppPath );
+    lstrcat( szRcPath ,L"\\ResFile_3_Ground" );
+    SetCurrentDirectory( szRcPath );
+    TCHAR* szFile_3 = L"ShmFile.shm";
+    if( FAILED( hr = g_RenderGround.OnCreateDevice( pd3dDevice ,szFile_3 ))) return hr;
+	
+	// 
+    //lstrcpy( szRcPath , szAppPath );
+    //lstrcat( szRcPath ,L"\\ResFile_1_Ordinate" );
+    //SetCurrentDirectory( szRcPath );
+    //TCHAR* szFile_1 = L"ShmFile.shm";
+    //if( FAILED( hr = g_RenderObject_Ordinate.OnCreateDevice( pd3dDevice ,szFile_1 ))) return hr;
+    ////
+    //lstrcpy( szRcPath ,szAppPath );
+    //lstrcat( szRcPath ,L"\\ResFile_2_Wave" );
+    //SetCurrentDirectory( szRcPath );
+    //TCHAR* szFile_2 = L"ShmFile.shm";
+    //if( FAILED( hr = g_RenderObject_Wave.OnCreateDevice( pd3dDevice ,szFile_2 ))) return hr;
+    ////     
     return S_OK;
   }
 
@@ -155,8 +177,9 @@ HRESULT CALLBACK OnResetDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFACE_D
     g_HUD.SetLocation( pBackBufferSurfaceDesc->Width-170, 0 );
     g_HUD.SetSize( 170, 170 );
     //
-    g_RenderObject_Ordinate.OnResetDevice( );
-    g_RenderObject_Wave.OnResetDevice( );
+    g_RenderObjectOccluder.OnResetDevice( );
+    g_RenderLight.OnResetDevice( );
+    g_RenderGround.OnResetDevice( );
     return S_OK;
   }
 
@@ -166,16 +189,40 @@ HRESULT CALLBACK OnResetDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFACE_D
 void CALLBACK OnFrameMove( IDirect3DDevice9* pd3dDevice, double fTime, float fElapsedTime )
   {
     //
-    D3DXMatrixRotationY( &g_matWorld ,fTime );
+    //D3DXMatrixRotationY( &g_matWorld ,fTime );
     // 
-    D3DXVECTOR3 vEyePt( 30  , 7 , 0 );
-    D3DXVECTOR3 vLookatPt( 0, 0, 0 );
+	D3DXMatrixIdentity( &g_matWorld );
+    D3DXVECTOR3 vEyePt( 30 * sin( fTime ) , 7 , 30 * cos( fTime ));
+
+    D3DXVECTOR3 vLookatPt( 0, 2, 0 );
     D3DXVECTOR3 vUpVec( 0, 1, 0 );
     D3DXMatrixLookAtLH( &g_matView, &vEyePt, &vLookatPt, &vUpVec );
-    //    
-
-    g_RenderObject_Ordinate.OnFrameMove( &g_matWorld ,&g_matView ,&g_matProject ,fTime  );
-    g_RenderObject_Wave.OnFrameMove( &g_matWorld ,&g_matView ,&g_matProject ,fTime  );
+	
+	D3DXVECTOR4 vViewPosition( vEyePt.x ,vEyePt.y ,vEyePt.z ,0.0f );
+    D3DXVECTOR4 vLightPosition( 4.0f * sinf( -fTime * 0.7 ) , 10.0f  , 4.0f * cosf( -fTime * 0.7 ), 1.0f );
+    D3DXVECTOR4 vOccluderPosition( 2.0f * sinf( fTime ) , 4.0f  , 2.0f * cosf( fTime ), 1.0f );
+	
+	g_RenderGround.OnFrameMove( &g_matWorld ,&g_matView ,&g_matProject ,fTime ,&vViewPosition );
+    g_RenderGround.SetLightPosition( &vLightPosition );
+	
+    // 先旋转在平移
+    D3DXMATRIX matRotateX ;
+    D3DXMatrixRotationX( &matRotateX , fTime );
+    D3DXMatrixTranslation( &g_matWorld , vOccluderPosition.x , vOccluderPosition.y , vOccluderPosition.z );
+    D3DXMatrixMultiply( &g_matWorld , &matRotateX , &g_matWorld );
+    g_RenderObjectOccluder.OnFrameMove( &g_matWorld , &g_matView ,&g_matProject ,fTime ,&vLightPosition );
+    g_RenderObjectOccluder.SetLightPosition( &vLightPosition );
+	
+	//压扁到平面
+    D3DXPLANE Plane( 0.0 , 1.0 , 0.0 , -0.01 );  // ax + by + cz + d =0
+    g_RenderObjectOccluder.ShadowToPlane( &vLightPosition , &Plane );
+ 
+ 
+ 
+    D3DXMatrixTranslation( &g_matWorld , vLightPosition.x , vLightPosition.y , vLightPosition.z );
+    g_RenderLight.OnFrameMove( &g_matWorld ,&g_matView ,&g_matProject ,fTime ,&vLightPosition );
+    g_RenderLight.SetLightPosition( &vLightPosition );
+    // 
   }
 
 //--------------------------------------------------------------------------------------
@@ -189,10 +236,10 @@ void CALLBACK OnFrameRender( IDirect3DDevice9* pd3dDevice, double fTime, float f
     // 渲染场景
     if( SUCCEEDED( pd3dDevice->BeginScene() ) )
       {
-        
-        g_RenderObject_Ordinate.OnFrameRender( pd3dDevice );
-        g_RenderObject_Wave.OnFrameRender( pd3dDevice );
-
+        g_RenderObjectOccluder.OnFrameRender( pd3dDevice );
+        g_RenderLight.OnFrameRender( pd3dDevice );
+        g_RenderGround.OnFrameRender( pd3dDevice );
+        g_RenderObjectOccluder.RenderShadowToPlane( pd3dDevice );
         g_HUD.OnRender( fElapsedTime ); 
         RenderText( fTime );
         
@@ -278,8 +325,9 @@ void CALLBACK OnLostDevice()
     CDXUTDirectionWidget::StaticOnLostDevice();
     if( g_pFont )        g_pFont->OnLostDevice();
     SAFE_RELEASE(g_pSprite);
-    g_RenderObject_Ordinate.OnLostDevice( );
-    g_RenderObject_Wave.OnLostDevice( );
+    g_RenderGround.OnLostDevice( );
+    g_RenderObjectOccluder.OnLostDevice( );
+    g_RenderLight.OnLostDevice( );
   }
 
 //--------------------------------------------------------------------------------------
@@ -289,7 +337,8 @@ void CALLBACK OnDestroyDevice()
   {
     CDXUTDirectionWidget::StaticOnDestroyDevice();
     SAFE_RELEASE(g_pFont);
-    g_RenderObject_Ordinate.OnDestroyDevice( );
-    g_RenderObject_Wave.OnDestroyDevice( );
+    g_RenderGround.OnDestroyDevice( );
+    g_RenderObjectOccluder.OnDestroyDevice( );
+    g_RenderLight.OnDestroyDevice( );
   }
 

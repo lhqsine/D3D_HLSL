@@ -34,6 +34,8 @@ struct RENDEROBJECT_D3DVERTEX
     float u , v;
   };
 
+#define RTTSIZE   512
+
 struct SSHADERMODULEFILEHEAD
   {
     char    s_szHead[ 16 ];
@@ -63,11 +65,25 @@ class CRENDEROBJECT
       DWORD                         m_dwNumVertices;      // 顶点个数
       LPDIRECT3DVERTEXDECLARATION9  m_pDecl;              // 顶点声明接口
       //
-      LPD3DXMESH                    m_pMeshSysMemory ;    // 
+//      LPD3DXMESH                    m_pMeshSysMemory ;    // 
       D3DXVECTOR3                   m_vCenter;            // 
       FLOAT                         m_fObjectRadius;      // 
       // 纹理
       IDirect3DTexture9*            m_pColorTexture  ;    // 
+
+	  //// ------------- 渲染到纹理所必须使用的变量 -----------------
+   //   int                           m_TextureSize;        // 纹理大小
+   //   // 渲染到纹理的变量和接口
+   //   LPDIRECT3DTEXTURE9            m_pRTTTexture;     // 装入反射纹理
+   //   LPD3DXRENDERTOSURFACE         m_pRTTInterface;   // 控制反射纹理的接口
+   //   LPDIRECT3DSURFACE9            m_pRTTSurface;     // 页面
+   //   // 渲染到纹理需要使用的三个矩阵
+   //   D3DXMATRIX                    m_matWorldRTT;    // 投影纹理的矩阵
+   //   D3DXMATRIX                    m_matViewRTT;     // 投影纹理的矩阵
+   //   D3DXMATRIX                    m_matProjectRTT;  // 投影纹理的矩阵
+   //   // 物体的重心坐标
+   //   D3DXVECTOR3                   m_vBaryCentric;       // 这个物体的重心坐标
+
 
       // 效果
       LPD3DXEFFECT                  m_pEffect;            // 效果接口
@@ -82,12 +98,25 @@ class CRENDEROBJECT
       //
       float GetRadius() { return m_fObjectRadius ;}
 
+	  // void ShadowToPlane( D3DXVECTOR4*, D3DXPLANE* );
+	  // void RenderShadowToPlane( IDirect3DDevice9* pd3dDevice );
+	  // void  SetLightPosition( D3DXVECTOR4* );
+
+	  //HRESULT RenderToTexture( LPDIRECT3DDEVICE9 pd3dDevice ,D3DXVECTOR3 vPosition ,float fTime );
+   //   LPDIRECT3DTEXTURE9  ReturnTexture( ) { return  m_pRTTTexture; }
+   //   HRESULT SetTexture( LPDIRECT3DTEXTURE9 ) ;
 
       //
+	  
+	 HRESULT GetDepthTexture( LPDIRECT3DTEXTURE9 pTexture );
+     HRESULT SetLightParament( D3DXVECTOR3* pLightEyePt, D3DXVECTOR3* pLightLookAtPt, D3DXVECTOR3* pLightUp );
+
+	  
       void    Init( );
       HRESULT OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* FileName );
-      HRESULT OnResetDevice(  );
-      void    OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime );
+      //HRESULT OnResetDevice( IDirect3DDevice9* pd3dDevice );
+      HRESULT OnResetDevice( );
+      void    OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime, D3DXVECTOR4* );
       void    OnFrameRender( IDirect3DDevice9* pd3dDevice );
       void    OnLostDevice();
       void    OnDestroyDevice();

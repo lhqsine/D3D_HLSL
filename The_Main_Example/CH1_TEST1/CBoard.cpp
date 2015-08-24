@@ -66,7 +66,7 @@ HRESULT CBOARD::OnResetDevice( IDirect3DDevice9* pd3dDevice )
   {
     HRESULT hr = S_OK;
     if( FAILED( hr = CreateSquare( pd3dDevice ))) return hr;
-    hr = m_pEffect->SetTexture( "texColorTexture_5" ,m_pColorTexture );
+    hr = m_pEffect->SetTexture( "texColorTexture" ,m_pColorTexture );
     return hr;
   }
 
@@ -95,37 +95,38 @@ void CBOARD::OnFrameRender( IDirect3DDevice9* pd3dDevice ,D3DXMATRIXA16* pWorld 
     hr = m_pEffect->End();
   }
 
-void CBOARD::OnFrameRender( IDirect3DDevice9* pd3dDevice ,LPDIRECT3DTEXTURE9 pTexture , int i , float fTime )
+void CBOARD::OnFrameRender( IDirect3DDevice9* pd3dDevice ,LPDIRECT3DTEXTURE9 pTexture  )
   {
     HRESULT hr;
-    switch( i )
-      {
-        case 0:
-          hr = m_pEffect->SetTechnique( "Tech_0" );
-          hr = m_pEffect->SetTexture( "texColorTexture_0" ,pTexture );
-          break;
-        case 1:
-          hr = m_pEffect->SetTechnique( "Tech_1" );
-          hr = m_pEffect->SetTexture( "texColorTexture_1" ,pTexture );
-          break;
-        case 2:
-          hr = m_pEffect->SetTechnique( "Tech_2" );
-          hr = m_pEffect->SetTexture( "texColorTexture_2" ,pTexture );
-          break;
-        case 3:
-          hr = m_pEffect->SetTechnique( "Tech_3" );
-          hr = m_pEffect->SetTexture( "texColorTexture_3" ,pTexture );
-          break;
-        case 4:
-          hr = m_pEffect->SetTechnique( "Tech_4" );
-          hr = m_pEffect->SetTexture( "texColorTexture_4" ,pTexture );
-          break;
-        case 5:
-          hr = m_pEffect->SetTechnique( "Tech_5" );
-          hr = m_pEffect->SetTexture( "texColorTexture_0" ,pTexture );
-          break;
-      }
-    hr = m_pEffect->SetFloat( "g_fTime" ,fTime );
+	    hr = m_pEffect->SetTexture( "texColorTextureIn" ,pTexture );
+    //switch( i )
+    //  {
+    //    case 0:
+    //      hr = m_pEffect->SetTechnique( "Tech_0" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_0" ,pTexture );
+    //      break;
+    //    case 1:
+    //      hr = m_pEffect->SetTechnique( "Tech_1" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_1" ,pTexture );
+    //      break;
+    //    case 2:
+    //      hr = m_pEffect->SetTechnique( "Tech_2" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_2" ,pTexture );
+    //      break;
+    //    case 3:
+    //      hr = m_pEffect->SetTechnique( "Tech_3" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_3" ,pTexture );
+    //      break;
+    //    case 4:
+    //      hr = m_pEffect->SetTechnique( "Tech_4" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_4" ,pTexture );
+    //      break;
+    //    case 5:
+    //      hr = m_pEffect->SetTechnique( "Tech_5" );
+    //      hr = m_pEffect->SetTexture( "texColorTexture_0" ,pTexture );
+    //      break;
+    //  }
+    //hr = m_pEffect->SetFloat( "g_fTime" ,fTime );
     hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
     hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( BOARD_D3DVERTEX )); 
     hr = pd3dDevice->SetIndices( m_pIB ); 

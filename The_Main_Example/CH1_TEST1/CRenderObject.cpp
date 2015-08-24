@@ -12,9 +12,19 @@ CRENDEROBJECT::CRENDEROBJECT( )
     m_dwNumIndices  = 0;
     m_dwNumVertices = 0;
     m_pDecl          = NULL;
-    m_pMeshSysMemory    = NULL;
+ //   m_pMeshSysMemory    = NULL;
+
     m_pEffect       = NULL;
     m_pColorTexture  = NULL;
+    m_pResourceInfo  = NULL;
+	////
+ //   m_TextureSize  = RTTSIZE;
+ //   m_pRTTTexture = NULL;
+ //   m_pRTTInterface = NULL;
+ //   m_pRTTSurface = NULL;
+ //   //
+ //   m_vBaryCentric = D3DXVECTOR3( 0.0 ,0.0 ,0.0 );
+ //   D3DXMatrixIdentity( &m_matWorldRTT );
 
   }
 
@@ -24,9 +34,12 @@ CRENDEROBJECT::~CRENDEROBJECT( )
     SAFE_RELEASE( m_pIB );
     SAFE_RELEASE( m_pEffect );
     SAFE_RELEASE( m_pDecl );
-    SAFE_RELEASE( m_pMeshSysMemory );
+//    SAFE_RELEASE( m_pMeshSysMemory );
     SAFE_RELEASE( m_pColorTexture );
-
+    SAFE_DELETE_ARRAY( m_pResourceInfo );
+	//SAFE_RELEASE( m_pRTTTexture );
+ //   SAFE_RELEASE( m_pRTTInterface );
+ //   SAFE_RELEASE( m_pRTTInterface );
   }
 
 //
@@ -40,6 +53,7 @@ HRESULT CRENDEROBJECT::OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* File
     if( FAILED( hr = LoadResource( FileName ))) return hr;
     TCHAR* szFile = GetResourceName( ENU_MODELX );
     LPD3DXMESH           pMeshSysMemClone = NULL;
+    LPD3DXMESH           m_pMeshSysMemory   = NULL;	
     if( FAILED( hr = D3DXLoadMeshFromX( szFile ,D3DXMESH_SYSTEMMEM ,
       pd3dDevice, NULL, NULL, NULL, NULL, &pMeshSysMemClone ))) return hr;
     // ------------------------ 以新的方式创建顶点流 -------------------------------
@@ -47,6 +61,7 @@ HRESULT CRENDEROBJECT::OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* File
     D3DVERTEXELEMENT9 decl[] =
       {
         { 0, 0,  D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0   }, 
+        //{ 0, 12, D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_NORMAL, 0   },
         { 0, 12, D3DDECLTYPE_FLOAT2, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_TEXCOORD, 0   },
         D3DDECL_END()
       };
@@ -63,6 +78,7 @@ HRESULT CRENDEROBJECT::OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* File
     if( FAILED( hr = m_pMeshSysMemory->LockVertexBuffer( 0 ,( LPVOID* ) &pData ))) return hr;
     if( FAILED( hr= D3DXComputeBoundingSphere( pData, m_pMeshSysMemory->GetNumVertices(), D3DXGetFVFVertexSize( m_pMeshSysMemory->GetFVF() ), &m_vCenter, &m_fObjectRadius ))) return hr;
     if( FAILED( hr = m_pMeshSysMemory->UnlockVertexBuffer( ))) return hr;
+	SAFE_RELEASE( m_pMeshSysMemory );
     //
     szFile = GetResourceName( ENU_FXFILE );
     LPD3DXBUFFER pCode = NULL;
@@ -83,29 +99,54 @@ HRESULT CRENDEROBJECT::OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* File
     return hr;
   }
 
-HRESULT CRENDEROBJECT::OnResetDevice( )
+HRESULT CRENDEROBJECT::OnResetDevice(  )
   {
     HRESULT hr = S_OK;
     if( FAILED( hr = m_pEffect->SetTechnique( "DefaultTech" ))) return hr ;
     if( FAILED( hr = m_pEffect->SetTexture( "g_ColorTexture", m_pColorTexture ))) return hr;
-  
+    // ------------------- 渲染到纹理 -----------------------------
+    //if( FAILED( hr = D3DXCreateTexture( pd3dDevice , m_TextureSize , m_TextureSize , 1, 
+    //  D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_pRTTTexture )))
+    //  {
+    //    if( FAILED( hr = D3DXCreateTexture( pd3dDevice, m_TextureSize , m_TextureSize, 1, 
+    //      0 ,D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_pRTTTexture )))
+    //      {
+    //        return hr;
+    //      }
+    //  }
+    //D3DSURFACE_DESC desc;
+    //hr = m_pRTTTexture->GetSurfaceLevel( 0, &m_pRTTSurface );
+    //hr = m_pRTTSurface->GetDesc( &desc );
+    //if( FAILED( hr = D3DXCreateRenderToSurface( pd3dDevice,desc.Width,desc.Height,
+    //  desc.Format,TRUE,D3DFMT_D16,&m_pRTTInterface )))
+    //  {
+    //    return hr;
+    //  }
+    ////-------------------------- 投影矩阵 ------------------------------------------
+    //D3DXMatrixPerspectiveFovLH( &m_matProjectRTT , D3DX_PI/4, 1, 1.0f, 100.0f );
     return hr;
   }
-
-void CRENDEROBJECT::OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime )
+void CRENDEROBJECT::OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime,  D3DXVECTOR4* pvEye  )
   {
     HRESULT hr = S_OK;
     hr = m_pEffect->SetMatrix( "g_matWorld", pWorld ) ;
     hr = m_pEffect->SetMatrix( "g_matView", pView ) ;
     hr = m_pEffect->SetMatrix( "g_matProject", pProject );
     hr = m_pEffect->SetFloat( "g_fTime", ( float ) fTime ) ;
+    hr = m_pEffect->SetVector( "g_vEyePosition", pvEye );
+	float Determinant;
+    D3DXMATRIX matOut;
+    D3DXMatrixInverse( &matOut , &Determinant ,pWorld );
+    D3DXMatrixTranspose( &matOut ,&matOut );
+    hr = m_pEffect->SetMatrix( "g_matWorldNormalInverseTranspose", &matOut );
+    // 
   }
 
 void CRENDEROBJECT::OnFrameRender( IDirect3DDevice9* pd3dDevice )
   {
     HRESULT hr = S_OK;
     //
-//    hr = m_pEffect->SetTechnique( "DefaultTech" );
+    hr = m_pEffect->SetTechnique( "DefaultTech" );
     hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
     hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( RENDEROBJECT_D3DVERTEX )); 
     hr = pd3dDevice->SetIndices( m_pIB ); 
@@ -122,15 +163,62 @@ void CRENDEROBJECT::OnFrameRender( IDirect3DDevice9* pd3dDevice )
     hr = m_pEffect->End();
   }
 
+//----------------------------------------------------------------------------
+// ReturnTexure
+// 
+//----------------------------------------------------------------------------
+//HRESULT CRENDEROBJECT::RenderToTexture( LPDIRECT3DDEVICE9 pd3dDevice ,D3DXVECTOR3 vPosition ,float fTime )
+//  {
+//    HRESULT hr;
+//    // 计算3个矩阵
+//    
+//    D3DXVECTOR3 vUpVec( 0.0 ,1.0 ,0.0 );
+//    D3DXMatrixLookAtLH( &m_matViewRTT , &vPosition , &m_vBaryCentric, &vUpVec );
+//    hr = m_pEffect->SetTechnique( "RenderToTextureShader" );
+//    D3DXMatrixRotationY( &m_matWorldRTT ,- fTime );
+//    hr = m_pEffect->SetMatrix( "g_matWorldRTT",  &m_matWorldRTT );
+//    hr = m_pEffect->SetMatrix( "g_matViewRTT",   &m_matViewRTT );
+//    hr = m_pEffect->SetMatrix( "g_matProjectRTT",&m_matProjectRTT );
+//    
+//    // 不能在此清除，否则不能渲染到纹理
+//    //hr = pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00000000, 1.0f, 0 );
+//    if( SUCCEEDED( hr = m_pRTTInterface->BeginScene( m_pRTTSurface, NULL )))
+//      {
+//        hr = pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, 0x00000000, 1.0f, 0 );
+//        hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
+//        hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( RENDEROBJECT_D3DVERTEX )); 
+//        hr = pd3dDevice->SetIndices( m_pIB ); 
+//        
+//        UINT uPasses;
+//        hr = m_pEffect->Begin( &uPasses, D3DXFX_DONOTSAVESTATE );
+//        for( UINT iPass = 0; iPass < uPasses; iPass++ )
+//          {
+//            hr = m_pEffect->BeginPass( iPass );
+//            hr = pd3dDevice->DrawIndexedPrimitive( D3DPT_TRIANGLELIST, 0, 
+//              0, m_dwNumVertices, 0, m_dwNumIndices );
+//            hr = m_pEffect->EndPass();
+//          }
+//        hr = m_pEffect->End();
+//        hr = m_pRTTInterface->EndScene( 0 );
+//        // 
+//      }
+//    return hr;
+//  }
 
+//HRESULT CRENDEROBJECT::SetTexture( LPDIRECT3DTEXTURE9 pTexture ) 
+//  {
+//    HRESULT hr;
+//    hr = m_pEffect->SetTexture( "g_RenderToTexture",pTexture );
+//    return hr;
+//  }
 
 void CRENDEROBJECT::OnLostDevice()
   {
     if( m_pEffect )   m_pEffect->OnLostDevice();
     // 
-    //SAFE_RELEASE( m_pRTTSurface );
-    //SAFE_RELEASE( m_pRTTInterface );
-    //SAFE_RELEASE( m_pRTTTexture );
+/*     SAFE_RELEASE( m_pRTTSurface );
+    SAFE_RELEASE( m_pRTTInterface );
+    SAFE_RELEASE( m_pRTTTexture ); */
   }
 
 void CRENDEROBJECT::OnDestroyDevice()
@@ -141,10 +229,10 @@ void CRENDEROBJECT::OnDestroyDevice()
     SAFE_RELEASE( m_pEffect );
     SAFE_RELEASE( m_pMeshSysMemory );
     SAFE_RELEASE( m_pColorTexture );
-    ////
-    //SAFE_RELEASE( m_pRTTSurface );
-    //SAFE_RELEASE( m_pRTTInterface );
-    //SAFE_RELEASE( m_pRTTTexture );
+    //
+/*     SAFE_RELEASE( m_pRTTSurface );
+    SAFE_RELEASE( m_pRTTInterface );
+    SAFE_RELEASE( m_pRTTTexture ); */
   }
 
 //----------------------------------------------------------------------------
@@ -210,3 +298,37 @@ TCHAR* CRENDEROBJECT::GetResourceName( RESTYPE enuResType )
     return szReturn;
   }
 
+ void CRENDEROBJECT::ShadowToPlane( D3DXVECTOR4* pLightPosition, D3DXPLANE* pPlane)
+{
+	HRESULT hr;
+	D3DXMATRIX matOut;
+	D3DXMatrixShadow( &matOut, pLightPosition, pPlane );
+	hr = m_pEffect->SetMatrix( "g_matWorldToPlane", &matOut );
+} 
+
+ void CRENDEROBJECT::RenderShadowToPlane( IDirect3DDevice9* pd3dDevice )
+ {
+	HRESULT hr = S_OK;
+	hr = m_pEffect->SetTechnique( "RenderShadowToPlaneTech" );
+	hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
+	hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( RENDEROBJECT_D3DVERTEX ) );
+	hr = pd3dDevice->SetIndices( m_pIB );
+	
+	UINT iPass, cPasses;
+	hr = m_pEffect->Begin( &cPasses, 0 );
+	for( iPass = 0; iPass < cPasses; iPass++)
+	{
+		hr = m_pEffect->BeginPass( iPass );
+		
+		hr = pd3dDevice->DrawIndexedPrimitive( D3DPT_TRIANGLELIST, 0, 0, m_dwNumVertices, 0, m_dwNumIndices );
+		hr = m_pEffect->EndPass();
+	}
+	
+	hr = m_pEffect->End();
+ }
+  
+void  CRENDEROBJECT::SetLightPosition( D3DXVECTOR4* pLightPosition )
+  {
+    HRESULT hr;
+    hr = m_pEffect->SetVector( "g_vLightPosition", pLightPosition );
+  }
