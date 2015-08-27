@@ -4,8 +4,8 @@
 //-----------------------------------------------------------------------------
 #include "dxstdafx.h"
 
-#ifndef _CRENDEROBJECT_H
-#define _CRENDEROBJECT_H
+#ifndef _FILETAG_H
+#define _FILETAG_H
 
 #define FILEHEADTAG  "SHMFILE" 
 
@@ -28,13 +28,6 @@ enum  RESTYPE
     ENU_ANIMATION      = 0X00500001 , // ¶¯»­ÎÄ¼þ
   };
 
-struct RENDEROBJECT_D3DVERTEX
-  {
-    D3DXVECTOR3 Position;
-    float u , v;
-  };
-
-#define RTTSIZE   512
 
 struct SSHADERMODULEFILEHEAD
   {
@@ -53,6 +46,18 @@ struct SRESOURCEINFO
     TCHAR   s_szFileName[ 24 ];
     RESTYPE s_enuResType;
     int     s_iOffset;
+  };
+
+#endif
+
+
+#ifndef _CRENDEROBJECT_H
+#define _CRENDEROBJECT_H
+
+struct RENDEROBJECT_D3DVERTEX
+  {
+    D3DXVECTOR3 Position;
+    float u , v;
   };
 
 class CRENDEROBJECT
@@ -116,7 +121,7 @@ class CRENDEROBJECT
       HRESULT OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* FileName );
       //HRESULT OnResetDevice( IDirect3DDevice9* pd3dDevice );
       HRESULT OnResetDevice( );
-      void    OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime, D3DXVECTOR4* );
+      void    OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime );
       void    OnFrameRender( IDirect3DDevice9* pd3dDevice );
       void    OnLostDevice();
       void    OnDestroyDevice();

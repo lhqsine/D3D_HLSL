@@ -41,7 +41,7 @@ class CBOARD
       HRESULT OnResetDevice( IDirect3DDevice9* pd3dDevice );
       void    OnFrameMove( );
       void    OnFrameRender( IDirect3DDevice9* pd3dDevice ,D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime );
-      void    OnFrameRender( IDirect3DDevice9* pd3dDevice ,LPDIRECT3DTEXTURE9 pTexture );
+      void    OnFrameRender( IDirect3DDevice9* pd3dDevice ,LPDIRECT3DTEXTURE9 pTexture, int );
       void    OnLostDevice();
       void    OnDestroyDevice();
   };

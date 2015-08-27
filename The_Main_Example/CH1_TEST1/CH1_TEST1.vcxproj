@@ -77,7 +77,9 @@
     <ClCompile Include="..\..\Common\DXUTmisc.cpp" />
     <ClCompile Include="..\..\Common\DXUTSettingsDlg.cpp" />
     <ClCompile Include="..\..\Common\DXUTsound.cpp" />
+    <ClCompile Include="CBoard.cpp" />
     <ClCompile Include="CRenderObject.cpp" />
+    <ClCompile Include="CShadowMapObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +92,9 @@
     <ClInclude Include="..\..\Common\DXUTmisc.h" />
     <ClInclude Include="..\..\Common\DXUTSettingsDlg.h" />
     <ClInclude Include="..\..\Common\DXUTsound.h" />
+    <ClInclude Include="CBoard.h" />
     <ClInclude Include="CRenderObject.h" />
+    <ClInclude Include="CShadowMapObject.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

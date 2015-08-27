@@ -12,7 +12,7 @@ CRENDEROBJECT::CRENDEROBJECT( )
     m_dwNumIndices  = 0;
     m_dwNumVertices = 0;
     m_pDecl          = NULL;
- //   m_pMeshSysMemory    = NULL;
+//    m_pMeshSysMemory    = NULL;
 
     m_pEffect       = NULL;
     m_pColorTexture  = NULL;
@@ -53,10 +53,8 @@ HRESULT CRENDEROBJECT::OnCreateDevice( IDirect3DDevice9* pd3dDevice ,TCHAR* File
     if( FAILED( hr = LoadResource( FileName ))) return hr;
     TCHAR* szFile = GetResourceName( ENU_MODELX );
     LPD3DXMESH           pMeshSysMemClone = NULL;
-    LPD3DXMESH           m_pMeshSysMemory   = NULL;	
-    if( FAILED( hr = D3DXLoadMeshFromX( szFile ,D3DXMESH_SYSTEMMEM ,
-      pd3dDevice, NULL, NULL, NULL, NULL, &pMeshSysMemClone ))) return hr;
-    // ------------------------ 以新的方式创建顶点流 -------------------------------
+    LPD3DXMESH           m_pMeshSysMemory   = NULL;
+    if( FAILED( hr = D3DXLoadMeshFromX( szFile ,D3DXMESH_SYSTEMMEM , pd3dDevice, NULL, NULL, NULL, NULL, &pMeshSysMemClone ))) return hr;
     //
     D3DVERTEXELEMENT9 decl[] =
       {
@@ -126,19 +124,45 @@ HRESULT CRENDEROBJECT::OnResetDevice(  )
     //D3DXMatrixPerspectiveFovLH( &m_matProjectRTT , D3DX_PI/4, 1, 1.0f, 100.0f );
     return hr;
   }
-void CRENDEROBJECT::OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime,  D3DXVECTOR4* pvEye  )
+  
+  HRESULT CRENDEROBJECT::GetDepthTexture( LPDIRECT3DTEXTURE9 pTexture  )
+  {
+    HRESULT hr ;
+    if( FAILED( hr = m_pEffect->SetTexture( "g_ShadowMap", pTexture ))) return hr;
+    return S_OK;
+  }
+  
+  HRESULT CRENDEROBJECT::SetLightParament( D3DXVECTOR3* pLightEyePt, D3DXVECTOR3* pLightLookAtPt, D3DXVECTOR3* pLightUp )
+  {
+    HRESULT hr = S_OK;
+    // 灯光观察矩阵
+    D3DXMATRIX matViewRTT ;
+    D3DXMATRIX matWorldRTT;
+    D3DXMATRIX matProjectRTT;
+    D3DXMatrixLookAtLH( &matViewRTT , pLightEyePt , pLightLookAtPt ,pLightUp );
+    // 设置灯光的世界矩阵
+    D3DXMatrixIdentity( &matWorldRTT );
+    D3DXMatrixPerspectiveFovLH( &matProjectRTT , D3DX_PI/4, 1, 1.0f, 100.0f );
+    hr = m_pEffect->SetMatrix( "g_matWorldRTT",  &matWorldRTT );
+    hr = m_pEffect->SetMatrix( "g_matViewRTT",   &matViewRTT );
+    hr = m_pEffect->SetMatrix( "g_matProjectRTT",&matProjectRTT );
+    return hr;
+  }
+
+  
+void CRENDEROBJECT::OnFrameMove( D3DXMATRIXA16* pWorld ,D3DXMATRIXA16* pView ,D3DXMATRIXA16* pProject ,double fTime )
   {
     HRESULT hr = S_OK;
     hr = m_pEffect->SetMatrix( "g_matWorld", pWorld ) ;
     hr = m_pEffect->SetMatrix( "g_matView", pView ) ;
     hr = m_pEffect->SetMatrix( "g_matProject", pProject );
     hr = m_pEffect->SetFloat( "g_fTime", ( float ) fTime ) ;
-    hr = m_pEffect->SetVector( "g_vEyePosition", pvEye );
-	float Determinant;
-    D3DXMATRIX matOut;
-    D3DXMatrixInverse( &matOut , &Determinant ,pWorld );
-    D3DXMatrixTranspose( &matOut ,&matOut );
-    hr = m_pEffect->SetMatrix( "g_matWorldNormalInverseTranspose", &matOut );
+    // hr = m_pEffect->SetVector( "g_vEyePosition", pvEye );
+	// float Determinant;
+    // D3DXMATRIX matOut;
+    // D3DXMatrixInverse( &matOut , &Determinant ,pWorld );
+    // D3DXMatrixTranspose( &matOut ,&matOut );
+    // hr = m_pEffect->SetMatrix( "g_matWorldNormalInverseTranspose", &matOut );
     // 
   }
 
@@ -227,12 +251,13 @@ void CRENDEROBJECT::OnDestroyDevice()
     SAFE_RELEASE( m_pIB );
     SAFE_RELEASE( m_pDecl );
     SAFE_RELEASE( m_pEffect );
-    SAFE_RELEASE( m_pMeshSysMemory );
+//    SAFE_RELEASE( m_pMeshSysMemory );
     SAFE_RELEASE( m_pColorTexture );
     //
 /*     SAFE_RELEASE( m_pRTTSurface );
     SAFE_RELEASE( m_pRTTInterface );
     SAFE_RELEASE( m_pRTTTexture ); */
+	SAFE_DELETE_ARRAY( m_pResourceInfo );
   }
 
 //----------------------------------------------------------------------------
@@ -298,37 +323,37 @@ TCHAR* CRENDEROBJECT::GetResourceName( RESTYPE enuResType )
     return szReturn;
   }
 
- void CRENDEROBJECT::ShadowToPlane( D3DXVECTOR4* pLightPosition, D3DXPLANE* pPlane)
-{
-	HRESULT hr;
-	D3DXMATRIX matOut;
-	D3DXMatrixShadow( &matOut, pLightPosition, pPlane );
-	hr = m_pEffect->SetMatrix( "g_matWorldToPlane", &matOut );
-} 
+ // void CRENDEROBJECT::ShadowToPlane( D3DXVECTOR4* pLightPosition, D3DXPLANE* pPlane)
+// {
+	// HRESULT hr;
+	// D3DXMATRIX matOut;
+	// D3DXMatrixShadow( &matOut, pLightPosition, pPlane );
+	// hr = m_pEffect->SetMatrix( "g_matWorldToPlane", &matOut );
+// } 
 
- void CRENDEROBJECT::RenderShadowToPlane( IDirect3DDevice9* pd3dDevice )
- {
-	HRESULT hr = S_OK;
-	hr = m_pEffect->SetTechnique( "RenderShadowToPlaneTech" );
-	hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
-	hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( RENDEROBJECT_D3DVERTEX ) );
-	hr = pd3dDevice->SetIndices( m_pIB );
+ // void CRENDEROBJECT::RenderShadowToPlane( IDirect3DDevice9* pd3dDevice )
+ // {
+	// HRESULT hr = S_OK;
+	// hr = m_pEffect->SetTechnique( "RenderShadowToPlaneTech" );
+	// hr = pd3dDevice->SetVertexDeclaration( m_pDecl );
+	// hr = pd3dDevice->SetStreamSource( 0, m_pVB, 0, sizeof( RENDEROBJECT_D3DVERTEX ) );
+	// hr = pd3dDevice->SetIndices( m_pIB );
 	
-	UINT iPass, cPasses;
-	hr = m_pEffect->Begin( &cPasses, 0 );
-	for( iPass = 0; iPass < cPasses; iPass++)
-	{
-		hr = m_pEffect->BeginPass( iPass );
+	// UINT iPass, cPasses;
+	// hr = m_pEffect->Begin( &cPasses, 0 );
+	// for( iPass = 0; iPass < cPasses; iPass++)
+	// {
+		// hr = m_pEffect->BeginPass( iPass );
 		
-		hr = pd3dDevice->DrawIndexedPrimitive( D3DPT_TRIANGLELIST, 0, 0, m_dwNumVertices, 0, m_dwNumIndices );
-		hr = m_pEffect->EndPass();
-	}
+		// hr = pd3dDevice->DrawIndexedPrimitive( D3DPT_TRIANGLELIST, 0, 0, m_dwNumVertices, 0, m_dwNumIndices );
+		// hr = m_pEffect->EndPass();
+	// }
 	
-	hr = m_pEffect->End();
- }
+	// hr = m_pEffect->End();
+ // }
   
-void  CRENDEROBJECT::SetLightPosition( D3DXVECTOR4* pLightPosition )
-  {
-    HRESULT hr;
-    hr = m_pEffect->SetVector( "g_vLightPosition", pLightPosition );
-  }
+// void  CRENDEROBJECT::SetLightPosition( D3DXVECTOR4* pLightPosition )
+  // {
+    // HRESULT hr;
+    // hr = m_pEffect->SetVector( "g_vLightPosition", pLightPosition );
+  // }
