@@ -48,10 +48,13 @@
     <ClCompile Include="CRenderObject.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CBoard.cpp">
+    <ClCompile Include="CParticleInstance.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CShadowMapObject.cpp">
+    <ClCompile Include="MotionStatus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CParticleStatus.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,10 +92,13 @@
     <ClInclude Include="CRenderObject.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="CBoard.h">
+    <ClInclude Include="CParticleInstance.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="CShadowMapObject.h">
+    <ClInclude Include="MotionStatus.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CParticleStatus.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
