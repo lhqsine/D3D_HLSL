@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7B5333E-50BA-41B5-8F4F-6FCCC1B93E5C}</ProjectGuid>
+    <RootNamespace>CH1_TEST1</RootNamespace>
+    <ProjectName>The_Main_Example</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>F:\github\D3D_HLSL\Include;F:\github\D3D_HLSL\Common;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\github\D3D_HLSL\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>comctl32.lib;d3dx9.lib;d3d9.lib;winmm.lib;dxerr9.lib;dxguid.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\dxstdafx.cpp" />
+    <ClCompile Include="..\..\Common\DXUT.cpp" />
+    <ClCompile Include="..\..\Common\DXUTEffectMap.cpp" />
+    <ClCompile Include="..\..\Common\DXUTenum.cpp" />
+    <ClCompile Include="..\..\Common\DXUTgui.cpp" />
+    <ClCompile Include="..\..\Common\DXUTMesh.cpp" />
+    <ClCompile Include="..\..\Common\DXUTmisc.cpp" />
+    <ClCompile Include="..\..\Common\DXUTSettingsDlg.cpp" />
+    <ClCompile Include="..\..\Common\DXUTsound.cpp" />
+    <ClCompile Include="CParticleInstance.cpp" />
+    <ClCompile Include="CRenderObject.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MotionStatus.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Common\dxstdafx.h" />
+    <ClInclude Include="..\..\Common\DXUT.h" />
+    <ClInclude Include="..\..\Common\DXUTEffectMap.h" />
+    <ClInclude Include="..\..\Common\DXUTenum.h" />
+    <ClInclude Include="..\..\Common\DXUTgui.h" />
+    <ClInclude Include="..\..\Common\DXUTMesh.h" />
+    <ClInclude Include="..\..\Common\DXUTmisc.h" />
+    <ClInclude Include="..\..\Common\DXUTSettingsDlg.h" />
+    <ClInclude Include="..\..\Common\DXUTsound.h" />
+    <ClInclude Include="CParticleInstance.h" />
+    <ClInclude Include="CRenderObject.h" />
+    <ClInclude Include="MotionStatus.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="The_Main_Example.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

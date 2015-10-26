@@ -92,7 +92,7 @@ HRESULT InitGeometry()
     SetCurrentDirectory( szRcPath );
 
 	// 装入模型
-	if(FAILED( hr = D3DXLoadMeshFromX( "Model.x", D3DXMESH_MANAGED, 
+	if(FAILED( hr = D3DXLoadMeshFromX( "Model2.x", D3DXMESH_MANAGED, 
 		g_pd3dDevice, NULL, NULL, NULL, NULL, &g_pMesh))) return hr;
 
         // 装入效果文件
@@ -151,8 +151,13 @@ VOID SetupMatrices()
     // 世界矩阵
     hr = g_pEffect->SetMatrix( "g_matWorld" , &matWorld );
     // 观察矩阵
-    D3DXVECTOR3 vEyePt( 15.0f , 3.0f , 0.0f );
-    D3DXVECTOR3 vLookatPt( 0.0f, 3.0f, 0.0f );
+//    D3DXVECTOR3 vEyePt( 15.0f , 3.0f , 0.0f );
+ //   D3DXVECTOR3 vLookatPt( 0.0f, 3.0f, 0.0f );
+	
+//	D3DXVECTOR3 vEyePt( 0.0f , 50.0f , -20.0f );
+    D3DXVECTOR3 vEyePt( 10.0f, 8.0f, 0.0f );
+    D3DXVECTOR3 vLookatPt( 0.0f, 0.0f, 0.0f );
+	
     D3DXVECTOR3 vUpVec( 0.0f, 1.0f, 0.0f );
     D3DXMATRIXA16 matView;
     D3DXMatrixLookAtLH( &matView, &vEyePt, &vLookatPt, &vUpVec );

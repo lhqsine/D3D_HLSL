@@ -1,0 +1,63 @@
+﻿生成启动时间为 2015/10/26 11:09:36。
+     1>项目“F:\github\D3D_HLSL\The_Main_Example_2\CH1_TEST1\CH1_TEST1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CParticleInstance.cpp CRenderObject.cpp main.cpp MotionStatus.cpp
+         MotionStatus.cpp
+     1>f:\github\d3d_hlsl\common\dxuteffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 参见“strncpy”的声明
+     1>f:\github\d3d_hlsl\common\dxutgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(317) : 参见“wcsncpy”的声明
+         main.cpp
+     1>f:\github\d3d_hlsl\common\dxuteffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 参见“strncpy”的声明
+     1>f:\github\d3d_hlsl\common\dxutgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(317) : 参见“wcsncpy”的声明
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\main.cpp(182): warning C4244: “参数”: 从“double”转换到“FLOAT”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\main.cpp(240): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\wchar.h(730) : 参见“_snwprintf”的声明
+         CRenderObject.cpp
+     1>f:\github\d3d_hlsl\common\dxuteffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 参见“strncpy”的声明
+     1>f:\github\d3d_hlsl\common\dxutgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(317) : 参见“wcsncpy”的声明
+         CParticleInstance.cpp
+     1>f:\github\d3d_hlsl\common\dxuteffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 参见“strncpy”的声明
+     1>f:\github\d3d_hlsl\common\dxutgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 11.0\vc\include\string.h(317) : 参见“wcsncpy”的声明
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(55): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(57): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(77): warning C4305: “参数”: 从“double”到“FLOAT”截断
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(80): warning C4305: “参数”: 从“double”到“float”截断
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(85): warning C4305: “参数”: 从“double”到“FLOAT”截断
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(87): warning C4305: “参数”: 从“double”到“float”截断
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(154): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(195): warning C4244: “参数”: 从“double”转换到“FLOAT”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(197): warning C4244: “=”: 从“double”转换到“FLOAT”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(198): warning C4244: “=”: 从“double”转换到“FLOAT”，可能丢失数据
+     1>f:\github\d3d_hlsl\the_main_example_2\ch1_test1\cparticleinstance.cpp(199): warning C4244: “=”: 从“double”转换到“FLOAT”，可能丢失数据
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files\Windows Kits\8.0\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\The_Main_Example.res" The_Main_Example.rc 
+       Link:
+         D:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\github\D3D_HLSL\The_Main_Example_2\Debug\The_Main_Example.exe" /INCREMENTAL /NOLOGO comctl32.lib d3dx9.lib d3d9.lib winmm.lib dxerr9.lib dxguid.lib dsound.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcp.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\github\D3D_HLSL\The_Main_Example_2\Debug\The_Main_Example.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\github\D3D_HLSL\The_Main_Example_2\Debug\The_Main_Example.lib" /MACHINE:X86 Debug\The_Main_Example.res
+         Debug\dxstdafx.obj
+         Debug\DXUT.obj
+         Debug\DXUTEffectMap.obj
+         Debug\DXUTenum.obj
+         Debug\DXUTgui.obj
+         Debug\DXUTMesh.obj
+         Debug\DXUTmisc.obj
+         Debug\DXUTSettingsDlg.obj
+         Debug\DXUTsound.obj
+         Debug\CParticleInstance.obj
+         Debug\CRenderObject.obj
+         Debug\main.obj
+         Debug\MotionStatus.obj
+         CH1_TEST1.vcxproj -> F:\github\D3D_HLSL\The_Main_Example_2\Debug\The_Main_Example.exe
+     1>已完成生成项目“F:\github\D3D_HLSL\The_Main_Example_2\CH1_TEST1\CH1_TEST1.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:33.23
