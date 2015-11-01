@@ -1,0 +1,17 @@
+﻿生成启动时间为 2015/10/24 19:07:04。
+     1>项目“N:\github\D3D_HLSL\CH1\CH1_TEST1\EmptyProject_1_OK_1_Tutorial\EmptyProject.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IN:\github\D3D_HLSL\Common /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy /D WIN32 /D NDEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0710 /D _UNICODE /D UNICODE /GF /Gm- /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt EmptyProject.cpp
+         EmptyProject.cpp
+     1>EmptyProject.cpp(143): warning C4305: “参数”: 从“double”到“FLOAT”截断
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _VC80_UPGRADE=0x0710 /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\EmptyProject.res" EmptyProject.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\EmptyProject.exe" /INCREMENTAL:NO /NOLOGO dxerr9.lib dxguid.lib d3dx9.lib d3d9.lib winmm.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Release\EmptyProject.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\EmptyProject.lib" /MACHINE:X86 /SAFESEH /MACHINE:I386 /IGNORE:4089 Release\EmptyProject.res
+         Release\EmptyProject.obj
+         EmptyProject.vcxproj -> N:\github\D3D_HLSL\CH1\CH1_TEST1\EmptyProject_1_OK_1_Tutorial\Release\EmptyProject.exe
+     1>已完成生成项目“N:\github\D3D_HLSL\CH1\CH1_TEST1\EmptyProject_1_OK_1_Tutorial\EmptyProject.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:42.65

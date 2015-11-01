@@ -1,0 +1,14 @@
+﻿生成启动时间为 2015/10/25 15:43:56。
+     1>项目“G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\CH1_TEST1\CH1_TEST1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>g:\github\d3d_hlsl\ch1\ch1_test2_loadmodel\ch1_test1\main.cpp(162): warning C4305: “参数”: 从“double”到“FLOAT”截断
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\Debug\CH1_TEST2_LoadModel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcp.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\Debug\CH1_TEST2_LoadModel.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\Debug\CH1_TEST2_LoadModel.lib" /MACHINE:X86 Debug\main.obj
+         CH1_TEST1.vcxproj -> G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\Debug\CH1_TEST2_LoadModel.exe
+     1>已完成生成项目“G:\github\D3D_HLSL\CH1\CH1_TEST2_LoadModel\CH1_TEST1\CH1_TEST1.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.16

@@ -1,0 +1,1 @@
+fxc.exe/E:MainVS_Screen Filefx.fx /Fo:FileFx.bin /T:fx_2_0 /Cc /Fc:FileFx.html
