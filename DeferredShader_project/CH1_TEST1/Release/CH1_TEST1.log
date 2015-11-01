@@ -1,0 +1,298 @@
+﻿生成启动时间为 2015/11/1 23:18:36。
+     1>项目“G:\github\D3D_HLSL\The_Main_Example_5\CH1_TEST1\CH1_TEST1.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Common\dxstdafx.cpp ..\..\Common\DXUT.cpp ..\..\Common\DXUTEffectMap.cpp ..\..\Common\DXUTenum.cpp ..\..\Common\DXUTgui.cpp ..\..\Common\DXUTMesh.cpp ..\..\Common\DXUTmisc.cpp ..\..\Common\DXUTSettingsDlg.cpp ..\..\Common\DXUTsound.cpp CBoard.cpp CFullWindow.cpp CRenderObject.cpp CRenderObjectCube.cpp CRenderObjectDS.cpp main.cpp
+         dxstdafx.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         DXUT.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(456): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(466): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(473): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(480): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(487): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(494): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(501): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(508): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(515): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(525): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(535): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(546): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(557): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(570): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(580): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(588): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(609): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(706): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(3392): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(3394): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(3396): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUT.cpp(3401): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3403): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3408): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3410): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3415): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3417): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3421): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3428): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUT.cpp(3434): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(310) : 参见“wcsncat”的声明
+     1>..\..\Common\DXUT.cpp(3458): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUT.cpp(3480): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(3486): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUT.cpp(3492): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUT.cpp(3503): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(3504): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(3505): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUT.cpp(3511): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUT.cpp(4225): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4228): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4231): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4234): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4237): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4240): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4243): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4246): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4249): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4253): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUT.cpp(4255): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         DXUTEffectMap.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         DXUTenum.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTenum.cpp(155): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+         DXUTgui.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(307): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(310): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(310) : 参见“wcsncat”的声明
+     1>..\..\Common\DXUTgui.cpp(363): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(410): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(1697): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(1709): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(2473): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(3124): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(3140): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(3698): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(4192): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(4206): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTgui.cpp(4897): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(310) : 参见“wcsncat”的声明
+     1>..\..\Common\DXUTgui.cpp(5025): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTgui.cpp(5341): warning C4996: 'wcsncat': This function or variable may be unsafe. Consider using wcsncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(310) : 参见“wcsncat”的声明
+     1>..\..\Common\DXUTgui.cpp(5484): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\swprintf.inl(85) : 参见“swprintf”的声明
+     1>..\..\Common\DXUTgui.cpp(6177): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+         DXUTMesh.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTMesh.cpp(17): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTMesh.cpp(130): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTMesh.cpp(461): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         DXUTmisc.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(170): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(279) : 参见“wcscat”的声明
+     1>..\..\Common\DXUTmisc.cpp(221): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(227): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(236): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(245): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(266): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(270): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(274): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(278): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(282): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(286): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(290): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(294): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(298): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(302): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(322): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(325): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(328): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(649): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTmisc.cpp(2012): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_vsnwprintf”的声明
+     1>..\..\Common\DXUTmisc.cpp(2036): warning C4996: '_vsnwprintf': This function or variable may be unsafe. Consider using _vsnwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_vsnwprintf”的声明
+         DXUTSettingsDlg.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>..\..\Common\DXUTSettingsDlg.cpp(807): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTSettingsDlg.cpp(826): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(288) : 参见“wcscpy”的声明
+     1>..\..\Common\DXUTSettingsDlg.cpp(828): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+     1>..\..\Common\DXUTSettingsDlg.cpp(883): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\wchar.h(730) : 参见“_snwprintf”的声明
+         DXUTsound.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         CBoard.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         CFullWindow.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         CRenderObject.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         CRenderObjectCube.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         CRenderObjectDS.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+         main.cpp
+     1>g:\github\d3d_hlsl\common\DXUTeffectmap.h(121): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 参见“strncpy”的声明
+     1>g:\github\d3d_hlsl\common\DXUTgui.h(157): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 参见“wcsncpy”的声明
+     1>main.cpp(196): warning C4244: “参数”: 从“double”转换到“FLOAT”，可能丢失数据
+     1>main.cpp(204): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Release\The_Main_Example.res" The_Main_Example.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\github\D3D_HLSL\The_Main_Example_5\Release\The_Main_Example.exe" /NOLOGO comctl32.lib d3dx9.lib d3d9.lib winmm.lib dxerr9.lib dxguid.lib dsound.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcp.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\github\D3D_HLSL\The_Main_Example_5\Release\The_Main_Example.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\github\D3D_HLSL\The_Main_Example_5\Release\The_Main_Example.lib" /MACHINE:X86 /SAFESEH Release\The_Main_Example.res
+         Release\dxstdafx.obj
+         Release\DXUT.obj
+         Release\DXUTEffectMap.obj
+         Release\DXUTenum.obj
+         Release\DXUTgui.obj
+         Release\DXUTMesh.obj
+         Release\DXUTmisc.obj
+         Release\DXUTSettingsDlg.obj
+         Release\DXUTsound.obj
+         Release\CBoard.obj
+         Release\CFullWindow.obj
+         Release\CRenderObject.obj
+         Release\CRenderObjectCube.obj
+         Release\CRenderObjectDS.obj
+         Release\main.obj
+         正在生成代码
+         已完成代码的生成
+         CH1_TEST1.vcxproj -> G:\github\D3D_HLSL\The_Main_Example_5\Release\The_Main_Example.exe
+     1>已完成生成项目“G:\github\D3D_HLSL\The_Main_Example_5\CH1_TEST1\CH1_TEST1.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:21.09
